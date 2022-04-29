@@ -308,9 +308,9 @@ void consulta_arvoreABP (pNodoA *a, char *arquivo_consultas, char *arquivo_saida
 
 int main ()
 {
-	clock_t starting_time, finishing_time;
+    clock_t starting_time, finishing_time;
 
-	starting_time = clock();
+    starting_time = clock();
     setlocale (LC_ALL, ""); /* Permite a impressao de caracteres acentuados na tela. */
 
     char arquivo_entrada[MAX_CARACTERES];
@@ -336,9 +336,9 @@ int main ()
     consulta_arvoreABP (raiz, arquivo_consultas, arquivo_saida); /* Realiza a consulta das palavras do arquivo de consultas na arvore e as imprime no arquivo de saida. */
 
     printf("Operacoes realizadas com sucesso.\n");
-	finishing_time = clock();
-	printf("\nTempo de execucao: %ld ms\n", finishing_time - starting_time);
+    finishing_time = clock();
+    printf("\nTempo de execucao: %ld ms\n", finishing_time - starting_time);
 
-	system("pause");
+    system("pause");
     return 0; /* Retorna zero para indicar que o programa foi executado corretamente. */
 }
