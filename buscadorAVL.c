@@ -2,7 +2,7 @@
 
 /* O programa a seguir simula o funcionamento de um buscador de palavras-chave.
 
-Inicialmente, o programa abre um arquivo texto de entrada contendo frases que possuem, cada uma, um Ìndice numÈrico (chamado de tweet).
+Inicialmente, o programa abre um arquivo texto de entrada contendo frases que possuem, cada uma, um √≠ndice num√©rico (chamado de tweet).
 
 Em seguida, realiza-se o processo de indexacao. O programa armazena cada palavra de cada tweet em um no de uma arvore AVL, sendo que
 cada no contendo uma palavra tambem ira conter uma lista simplesmente encadeada contendo todos os tweets em que aquela palavra aparece
@@ -379,13 +379,13 @@ int calcula_altura (pNodoA *a) /* Funcao para determinar a altura de uma arvore 
 
 void imprime_estatisticas (FILE *arq2, pNodoA *a, int aux_comparacoes_index) /* Funcao para realizar as impressoes dos dados das estatisticas de indexacao e consulta no arquivo de saida. */
 {
-    fprintf (arq2, "********** EstatÌsticas da IndexaÁ„o **********\n\n");
+    fprintf (arq2, "********** Estat√≠sticas da Indexa√ß√£o **********\n\n");
     fprintf (arq2, "Nodos = %d\n", conta_nodos(a)); /* Impressao do numero de nodos da arvore criada na indexacao. */
-    fprintf (arq2, "ComparaÁıes = %d\n", aux_comparacoes_index); /* Impressao do numero de comparacoes realizadas durante a indexacao. */
-    fprintf (arq2, "RotaÁıes = %d\n", rotacoes); /* Impressao do numero de rotacoes realizadas durante a indexacao, na insercao dos nos na arvore. */
-    fprintf (arq2, "Altura da ¡rvore = %d\n\n", calcula_altura(a)); /* Impressao da altura da arvore criada durante a indexacao. */
-    fprintf (arq2, "********** EstatÌsticas da Consulta **********\n\n");
-    fprintf (arq2, "ComparaÁıes = %d\n", comparacoes); /* Impressao do numero de comparacoes realizadas durante a consulta. */
+    fprintf (arq2, "Compara√ß√µes = %d\n", aux_comparacoes_index); /* Impressao do numero de comparacoes realizadas durante a indexacao. */
+    fprintf (arq2, "Rota√ß√µes = %d\n", rotacoes); /* Impressao do numero de rotacoes realizadas durante a indexacao, na insercao dos nos na arvore. */
+    fprintf (arq2, "Altura da √Årvore = %d\n\n", calcula_altura(a)); /* Impressao da altura da arvore criada durante a indexacao. */
+    fprintf (arq2, "********** Estat√≠sticas da Consulta **********\n\n");
+    fprintf (arq2, "Compara√ß√µes = %d\n", comparacoes); /* Impressao do numero de comparacoes realizadas durante a consulta. */
 }
 
 pNodoA* indexa_arvoreAVL (pNodoA *a, char *arquivo_entrada) /* Funcao para realizar as indexacoes das palavras e dos tweets em uma arvore binaria de pesquisa. */
@@ -487,7 +487,7 @@ void consulta_arvoreAVL (pNodoA *a, char *arquivo_consultas, char *arquivo_saida
             fprintf (arq2, "\n\n"); /* Impressao de quebra de linha no arquivo de saida. */
         }
         else /* Se a string nao estiver na arvore, ela sera impressa junto com a informacao de que e inexistente na estrutura. */
-            fprintf (arq2, "Consulta: %s\t\tPalavra n„o encontrada.\n\n", string_aux);
+            fprintf (arq2, "Consulta: %s\t\tPalavra n√£o encontrada.\n\n", string_aux);
 
         memset(string_aux, 0, sizeof(string_aux)); /* Zera todo o array de caracteres da string auxiliar ao fim de cada iteracao. */
     }
@@ -500,9 +500,9 @@ void consulta_arvoreAVL (pNodoA *a, char *arquivo_consultas, char *arquivo_saida
 
 int main ()
 {
-	clock_t starting_time, finishing_time;
+    clock_t starting_time, finishing_time;
 
-	starting_time = clock();
+    starting_time = clock();
     setlocale (LC_ALL, ""); /* Permite a impressao de caracteres acentuados na tela. */
 
     char arquivo_entrada[MAX_CARACTERES];
@@ -528,9 +528,9 @@ int main ()
     consulta_arvoreAVL (raiz, arquivo_consultas, arquivo_saida); /* Realiza a consulta das palavras do arquivo de consultas na arvore e as imprime no arquivo de saida. */
 
     printf("Operacoes realizadas com sucesso.\n");
-	finishing_time = clock();
-	printf("\nTempo de execucao: %ld ms\n", finishing_time - starting_time);
+    finishing_time = clock();
+    printf("\nTempo de execucao: %ld ms\n", finishing_time - starting_time);
 
-	system("pause");
+    system("pause");
     return 0; /* Retorna zero para indicar que o programa foi executado corretamente. */
 }
